@@ -7,7 +7,7 @@ load_dotenv()
 day = int(sys.argv[1])
 
 USER_AGENT = "adventofcode_working_directories_creator"
-URL = f"https://adventofcode.com/2021/day/{day}/input"
+URL = f"https://adventofcode.com/2022/day/{day}/input"
 cookie = os.getenv('COOKIE')
 
 # attempt to fetch inputs
