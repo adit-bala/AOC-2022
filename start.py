@@ -7,7 +7,7 @@ load_dotenv()
 day = int(sys.argv[1])
 path = f"./{day}/{day}"
 
-USER_AGENT = "adventofcode_working_directories_creator"
+USER_AGENT = "https://github.com/adit-bala/AOC-2022 by @adit-bala on Github"
 URL = f"https://adventofcode.com/2022/day/{day}/input"
 cookie = os.getenv('COOKIE')
 
