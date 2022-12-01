@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 day = int(sys.argv[1])
+path = f"./{day}/{day}"
 
 USER_AGENT = "adventofcode_working_directories_creator"
 URL = f"https://adventofcode.com/2022/day/{day}/input"
@@ -15,13 +16,13 @@ if not os.path.exists(f"./{day}"):
     os.makedirs(f"./{day}")
 
 # attempt to fetch inputs
-if not os.path.exists(f"./{day}/{day}.txt"):
+if not os.path.exists(f"{path}.txt"):
     try:
         with requests.get(url=URL, cookies={"session": cookie}, headers={"User-Agent": USER_AGENT}) as response:
             if response.ok:
                 if response.ok:
                     data = response.text
-                    input = open(f"./{day}/{day}.txt", "w+")
+                    input = open(f"{path}.txt", "w+")
                     input.write(data.rstrip("\n"))
                     input.close()
                 else:
@@ -30,9 +31,9 @@ if not os.path.exists(f"./{day}/{day}.txt"):
         print("something went wrong lol")
 
 # try to set up code
-if not os.path.exists(f"./{day}/{day}.py"):
-    code = open(f"./{day}/{day}.py", "w+")
-    code.write(f"\n\nwith open((__file__.rstrip(\"{day}.py\")+\"{day}.txt\"), 'r') as input_file:\n input = input_file.read()\n\n\n\nprint(\"Part One : \"+ str(None))\n\n\n\nprint(\"Part Two : \"+ str(None))"
+if not os.path.exists(f"{path}.py"):
+    code = open(f"{path}.py", "w+")
+    code.write(f"with open((__file__.rstrip(\"{day}.py\")+\"{day}.txt\"), 'r') as input_file:\n input = input_file.read()\n\n\n\nprint(\"Part One : \"+ str(None))\n\n\n\nprint(\"Part Two : \"+ str(None))"
     ) 
     code.close()
 
