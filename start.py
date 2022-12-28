@@ -33,7 +33,7 @@ if not os.path.exists(f"{path}.txt"):
 # try to set up code
 if not os.path.exists(f"{path}.py"):
     code = open(f"{path}.py", "w+")
-    code.write(f"with open((__file__.rstrip(\"{day}.py\")+\"{day}test.txt\"), 'r') as input_file:\n input = input_file.read()\n\n\n\nprint(\"Part One : \"+ str(None))\n\n\n\nprint(\"Part Two : \"+ str(None))"
+    code.write(f"with open((__file__.rstrip(\"{day}.py\")+\"{day}test.txt\"), 'r') as input_file:\n input = input_file.read().split(\'\n\')[:-1]\n\n\n\nfor line in input:\n\n\n\nprint(\"Part One : \"+ str(None))\n\n\n\nprint(\"Part Two : \"+ str(None))"
     ) 
     code.close()
 
