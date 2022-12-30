@@ -2,4 +2,4 @@
 
  an attempt at Advent of Code 2022
  
- warning: cursed code
+ warning: stupid code
